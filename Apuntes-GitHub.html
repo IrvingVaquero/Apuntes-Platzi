@@ -1,0 +1,240 @@
+<!-- 
+    !Configuracion de git:
+
+    ?   git config --list
+    *   Nos muestra un listado con lo que son las configuraciones de nuestro git 
+
+    ?   git config --global user.name "Irving vaquero"
+    *   Cambiamos el nombre de usuario
+
+    ?   git config --global user.mail "*******@gmail.com"
+    *   Cambiamos el correo de usuario
+
+    ?   git init
+    *   Inicializamos un repositario
+    %   se crea en memoria ram stating que es el espacio en medio del directoria y el repositorio que es el master
+    %   untrack: cuando aun no se le da "add"
+    %   Track: ya esta en una zona rastreable siendo parte de stating
+
+
+    !uso de git
+    ?   code archivo
+    *   Nos abre el archivo con vs code
+
+    ?   git status
+    *   Nos muestra los cambios que se han echo
+
+    ?   git add
+    *   Agregamos los archivos que contienen un cambio 
+
+    ?   git commit -m "Mensjae"
+    *   Guardamos lo que son los cambios
+    %   Si se olvido el mensaje nos habre una ventana, para escribir ESC+I y para salir de esta pantalla sera con ESC+SHIFT+Z+Z
+
+    ?   git commmit -am "mensaje"
+    *   Es la fucion de comiit y add pero solo funiona con archivos que ya se le hayan hecho add
+
+    ?   git log archivo
+    *   Nos muestra los cambios que se han echo
+
+    ?   git show archivo
+    *   nos muestra cambios donde:
+    %   commit: ultimo comit junto donde me encuentro   
+    %   Mensaje del commit
+    %   DIFF: nos muestra la comparacion entre la version anterior
+        
+    ?   git diff commit commit
+    *   compara entre las versiones que se han hecho segun los commit
+
+    ?   git checkout commit
+    *   Trae los ultimos cambios hacia la carpeta, hasta que se hace el commit se guarda el cambio
+
+    ?   git reset commit
+    *   Nos permite regresar a una version anterior
+    %   hard: todo vuelve
+    %   soft: se queda lo de stading
+
+    ?   git rm
+    *   borra el archivo pero no su historial
+    %   --cached: elimina los archivos tanto del repositorio como del staging
+    %   --force: elimina los elementos tanto de git como del disco duro
+
+    !Flujo de trabajo
+
+    ?   desarrollo personal
+    *   Diretorio de trabajo
+    *           ⏬ add
+    *   Preparacion o statign
+    *           ⏬ commit
+    *   Repositorio local
+    ?   Servidor remoto
+    *   Se conect con clone, push se manda y pull me trae todo lo nuevo
+
+    ?   Ramas
+    *   Forma de hacer cambios sin afectar el master
+
+    ?   git branch nombre
+    *   Nos crea ramas
+
+    ?   git checkout 
+    *   Nos mueve a la rama
+
+    ?   git merge rama
+    *   nos fuciona a la rama donde estamos la rama que le especificamos 
+
+    !Solucion de conflictos
+    *   Cuando se hacen modificaciones las mismas lineas se presenta un conflicto al momento de hacer un merge, la manera de solucion es manual, por lo que el desarrollador sera el que decide que cambio es el que queda.
+
+
+    !Cambios en el master
+    ?   Cambio en la consfiguracion 
+    *   Ya no es master si no main
+    %   git config --global init.defaultBranch main
+
+    !GITHUB
+    ?   git remote add origin direccionDirectorio
+    *   Crea un enlace con el repositorio online
+
+    ?   git push origin master
+    *   Manda al repositoria remoto lo que tengamos en local
+
+    ?   git pull origin master
+    *   nos trae lo que tengamos en remoto
+
+    ?   git pull origin master --allow-unrelead-histories
+    *   forza el primer pull por la diferencia de historia
+
+    ?   alias arbolito="git log --all --graph --decorate --oneline"
+    *   crea un alias con el comando que esta en la comillas
+
+    ?   git tag -a nombre-del-tag id-del-commit
+    *   Crea un tag osea como una version segun el commit
+
+    ?   git tag -d nombre-del-tag
+    *   Elimina un tag de forma local
+
+    ?   git tag y git show-ref --tags
+    *   Nos muestra una lista con los tags existentes
+
+    ?   git push origin --tags
+    *   Manda a remoto un tag
+
+    ?   git push origin :refs/tags/nombre-del-tag
+    *   Borra el tag de manera remota
+
+    ?   gitk
+    *   Nos abre en un software de forma visual de la historia
+
+    ?   git show-branch --all
+    *   Nos muestra la historia de cada una de las ramas
+
+    !Creacion de llaves publicas y privadas
+    ?   ssh-keygen -t rsa -b 4096 -C "castillo089frosty@gmail.com" 
+    *   Genera las llaves tanto publica como privada
+    ?   eval $(ssh-agent -s) 
+    *   Revisa si esta corriendo la llave.
+    ?   ssh-add ~/.ssh/id_rsa 
+    *   Añade la llave privada al sistema.
+    ?   git remote set-url origin url-ssh-del-repositorio-en-github
+    *   Cambia la forma en como esta =mos conectado https->ssh
+
+    
+    !Pull Request 
+    *   Es un entorno intermedio entre el merge y la modificacion de codigo
+
+    !Forks
+    *   Crea una copia como un proyecto mio 
+
+    !.gitignore
+    *   Es una lista de archivos que se van a ignorar
+    %   Se crea un archivo con el nombre .gitignore
+    %   Sintaxis: *.jpg, *.png etc
+
+    !Readme.md
+    *   Es lo primero que se muestra en el repositorio
+
+    !Git Pages
+    *   Es un servicio de hosting
+
+    !rebease
+    *   Reescribe la historia de las ramas, manda actualizaion parecidos a lo que se hace con un marge pero no guarda historia si no que se añade como comits de donde se hace
+    
+    ?   git branch -D rama 
+    *   Me borra la rama
+
+    !Stashed
+    ?   git stash
+    *   Es para guardar cambios para poder añadirlos despues, se devuelve al ultimo commit
+
+    ?   git stash list
+    *   Nos muestra lo que esta en stash
+
+    ?   git stash pop
+    *   Me devulve lo que tengo en stash
+
+    ?   git stash branch ram
+    *   Crea una rama con lo que se encuentra en branch
+
+    ?   git stash drop 
+    *   Me borra lo que esta en el stash
+
+    !Otros
+
+    ?   git clean --dry-run
+    *   Simula lo que va borrar
+
+    ?   git clean -f
+    *   Borra los archivos, no carpetas y tampoco lo que esta en .ignore
+
+    ?   git cherry-pick hash
+    *   Nos devuelve solo un commit en especifico
+
+    ?   git reflog
+    *   Nos muestra toda la historia no importa que borremos los archivos, ramas, etc
+
+    ?   git reset --HARD hash
+    %   hard: todo vuelve
+    %   soft: se queda lo de stading
+
+    ?   git commit --ammend
+    *   Se añade al commit anterior 
+
+    ?   git grep palabra
+    *   Me muestra donde urilice la palabra
+
+    ?   -n
+    *   Me muestra la linea donde la utilice
+
+    ?   -c
+    *   Me muestra la cantidad de veces que utilizo una palabra
+
+    ?   git log -s "palabra"
+    *   Busca pero en los commits
+
+    ?   git shortlog
+    *   Nos muestra cuantos commits ha echo cada equipo
+
+    ?   -sn
+    *   Muestra quien ha hecho comits
+
+    ?   --all
+    *   Todos
+
+    ?   --no-merges
+    *   Todos menos merges
+
+    ?   git config --global alias.stats "comando"
+    *   Nos guarda en stats lo que esta como comando
+
+    ?   git blame archivo.
+    *   Nos muestra quien hizo cada cosa en un archivo
+    
+    ?   -c 
+    *   Lo identa o bien le da mas diseño
+
+    ?   git comando --help
+    *   Nos muestra documentacion
+
+    ?   git branch -r
+    *   Nos muesra las ramas remotas
+ -->
