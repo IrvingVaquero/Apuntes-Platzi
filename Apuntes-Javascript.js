@@ -136,6 +136,7 @@ var articulos = [
     }
 ]
 
+
 var filtrados =  articulos.filter(function(articulo){
     return articulo.precio !=500; // *Filtro que se requiere 
 
@@ -187,5 +188,38 @@ function btnOnClick(){
     console.log(Number(input1.value)  + Number(input2.value))
     resultado.innerText = Number(input1.value)  + Number(input2.value)
 }
+
+
+/* 
+    !Scope
+    *Alcanse las variable
+    
+    %Global var
+    %Function var 
+    %Block const let
+    
+    ? Redeclarar: var
+    ? Reaccionacion: let,var
+
+    !Hoisting
+    * Elevacion de var y funcionesP
+
+    !Modo estricto
+    ?  'use stric';
+    * Hace visible los errores silenciosos
+
+    !Closures
+    *   No son siempre usados
+    *   Permite acceder al ambiente exterior de una funcion
+    ?   Ambito lexico
+    *   Es la accesibilidad de las funciones anidadas
+
+
+    
+
+
+
+
+*/
 
 
