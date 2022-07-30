@@ -34,4 +34,16 @@
     !   SAAS
     *   Es una aplicacion que nos da la oportunidad de crear apps [No Code]
 
+    !   Desarrollo de API Twitter
+    %   ENDPOINT / ROUTE / PATH
+    *   Seccion de la url
+    *   [PROTOCOLO://][DOMINIO/][API/][ENDPOINT]
+        
+    ?   CRUD
+    *   Create  -> POST
+    *   Read    -> GET
+    *   Update  -> PUT
+    *   Delete  -> Delete
+
+
 """
