@@ -32,6 +32,13 @@
     %   Nos permite interactua con el sdk -- consola
 
     !   primera aplicacion dotnet
+    *   DOTNET NEW [Que tipo de aplicacion requiero]
+
+    !   Estructura
+    *   program.cs -- Es lo que se ejecuta
+    *   csproj -- Contiene las caraceristas o archivo de configuracion
+    *   
+
 
 
 
