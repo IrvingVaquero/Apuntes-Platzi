@@ -37,7 +37,12 @@
     !   Estructura
     *   program.cs -- Es lo que se ejecuta
     *   csproj -- Contiene las caraceristas o archivo de configuracion
-    *   
+    *   dotnet new globaljson -- Configuracion de la aplicacion en cuanto versiones del sdk
+    *   allowprerelease -- no acepta release no oficiales o finales
+
+    !   nuget
+    *   Es el gestor de paquetes para .net o las librerias que se podran utilizar
+    
 
 
 
